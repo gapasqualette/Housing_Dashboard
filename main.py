@@ -68,28 +68,28 @@ st.markdown(
 column = st.columns(4)
 
 with column[0]:
-    tile = column[0].container(height=210)
+    tile = column[0].container(height='stretch', border=True)
     tile.subheader("Area Stats 🌎", divider=True)
     tile.write(f'**Average Area**: **{np.mean(df['AvgArea (sqft)']):,.2f}** sqft')
     tile.write(f'**Smallest Area**: **{np.min(df["AvgArea (sqft)"]):,.2f}** sqft')
     tile.write(f'**Biggest Area**: **{np.max(df["AvgArea (sqft)"]):,.2f}** sqft')
 
 with column[1]:
-    tile2 = column[1].container(height=210)
+    tile2 = column[1].container(height='stretch', border=True)
     tile2.subheader("Population Stats 👨‍👩‍👧‍👦", divider=True)
     tile2.write(f'**Average Population**: **{int(np.mean(df["Area Population"]))}** people')
     tile2.write(f'**Smallest Population**: **{int(np.min(df["Area Population"]))}** people')
     tile2.write(f'**Biggest Population**: **{int(np.max(df["Area Population"]))}** people')
 
 with column[2]:
-    tile3 = column[2].container(height=210)
+    tile3 = column[2].container(height='stretch', border=True)
     tile3.subheader("Price Stats 💵", divider=True)
     tile3.write(f'**Average Price**: **US${round(np.mean(df["Price"]),2):,.2f}**')
     tile3.write(f'**Smallest Price**: **US${round(np.min(df["Price"]),2):,.2f}**')
     tile3.write(f'**Biggest Price**: **US${round(np.max(df["Price"]),2):,.2f}**')
 
 with column[3]:
-    tile4 = column[3].container(height=210)
+    tile4 = column[3].container(height='stretch', border=True)
     tile4.subheader("Housing Number per State 🏡", divider=True)
     tile4.write(f'**Most Housing**: **{us_states_and_territories_military.get(df["State"].value_counts().idxmax(), 'Unknown')}** - **{df["State"].value_counts().max()}**')
     tile4.write(f'**Fewest Housing**: **{us_states_and_territories_military.get(df["State"].value_counts().idxmin(), 'Unknown')}** - **{df["State"].value_counts().min()}** ')
