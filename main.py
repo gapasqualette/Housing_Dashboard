@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
 
 us_states_and_territories_military = {
     # 50 U.S. States
