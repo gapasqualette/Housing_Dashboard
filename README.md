@@ -127,19 +127,17 @@ streamlit run main.py
 
 ## 💡 Future Improvements
 
-* Integration with real-time data sources
 * Deployment on Streamlit Cloud
-* Advanced analytics (machine learning for price prediction)
-* Enhanced filtering and user customization
+* Enhanced filtering
 
 ---
 
 ## 📎 Contact
 
 **Guilherme Pasqualette**
-📧 [guilhermepasqualette@gmail.com](mailto:guilhermepasqualette@gmail.com)
-🔗 https://github.com/gapasqualette
-🔗 https://www.linkedin.com/in/galencastro-pasqualette/
+* 📧 [guilhermepasqualette@gmail.com](mailto:guilhermepasqualette@gmail.com)
+* 🔗 https://github.com/gapasqualette
+* 🔗 https://www.linkedin.com/in/galencastro-pasqualette/
 
 ---
 
