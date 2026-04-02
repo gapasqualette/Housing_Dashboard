@@ -108,7 +108,7 @@ with tile_btns:
     st.session_state.states_selected = tile_btns.multiselect('Choose the states', abbr_state)
 
 with tile2_btns:
-    if st.session_state.states_selected:
+    if len(st.session_state.states_selected) > 1:
         states = [state.split(" - ")[1] for state in st.session_state.states_selected]
         str_states = ' | '.join(sorted(states))
         st.subheader(f'Chosen states: {str_states}', divider=True)
@@ -195,24 +195,22 @@ with tile2_btns:
             st.write(f'**Highest Number of Bedrooms** are in **{bedroom_max_street}** - **{bedroom_max}** with **{bedroom_max_bedrooms}** Bedrooms')
 
 
-with btn_columns[1]:
-    if st.session_state.states_selected:
-        st.markdown('<div class = "vl"></div>', unsafe_allow_html=True)
+        with btn_columns[1]:
+            st.markdown('<div class = "vl"></div>', unsafe_allow_html=True)
 
-with btn_columns[2]:
-    if st.session_state.states_selected:
-        df_filter = df[df["State"].isin(code_states)]
-        df_filter = df_filter.groupby("State")[cols_num].mean()
+        with btn_columns[2]:
+            df_filter = df[df["State"].isin(code_states)]
+            df_filter = df_filter.groupby("State")[cols_num].mean()
 
-        st.subheader('Areas & Populations Comparisons 📈')
-        chart_area = df_filter[['AvgArea (sqft)', 'Area Population']]
-        st.line_chart(chart_area, x_label='Data per State', y_label='Average Values')
+            st.subheader('Areas & Populations Comparisons 📈')
+            chart_area = df_filter[['AvgArea (sqft)', 'Area Population']]
+            st.line_chart(chart_area, x_label='Data per State', y_label='Average Values')
 
-        st.subheader('Rooms & Bedrooms Comparisons 📉')
-        chart_rooms = df_filter[['AvgRooms', 'AvgBedrooms']]
-        st.line_chart(chart_rooms, x_label='Data per State', y_label='Average Values')
+            st.subheader('Rooms & Bedrooms Comparisons 📉')
+            chart_rooms = df_filter[['AvgRooms', 'AvgBedrooms']]
+            st.line_chart(chart_rooms, x_label='Data per State', y_label='Average Values')
 
-        st.subheader('Prices Comparisons 📊')
-        chart_price = df_filter[['Price']]
-        st.bar_chart(chart_price, x_label='Data per State', y_label='Average Values', height=200)
-        
+            st.subheader('Prices Comparisons 📊')
+            chart_price = df_filter[['Price']]
+            st.bar_chart(chart_price, x_label='Data per State', y_label='Average Values', height=200)
+            
