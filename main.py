@@ -42,7 +42,7 @@ df["Street"] = df["Address"].str.split(",").str[0]
 
 df["State"] = df["Address"].str.split().str[-2]
 
-df = df.drop(columns=["Address"], axis=1)
+df = df.drop(columns=["Address"], axis='columns')
 
 cols_num = ["AvgArea (sqft)", "AvgAge (years)", "AvgRooms", "AvgBedrooms", "Area Population", "Price"]
 
