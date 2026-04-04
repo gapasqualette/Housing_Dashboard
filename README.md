@@ -16,7 +16,7 @@ The main goal is to demonstrate how data can be transformed into **clear, decisi
 
 The dataset used in this project can be found in this repository:
 
-[https://www.kaggle.com/datasets/kanths028/usa-housing/data]
+[USA Housing](https://www.kaggle.com/datasets/kanths028/usa-housing/data)
 
 ---
 
